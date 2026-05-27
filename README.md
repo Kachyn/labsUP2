@@ -1,3 +1,4 @@
+[![Drone Control Panel CI/CD](https://github.com/Kachyn/labsUP2/actions/workflows/drone-ci.yml/badge.svg)](https://github.com/Kachyn/labsUP2/actions/workflows/drone-ci.yml)
 # Remote Control & Statistics Panel for ESP32 Ground Drone
 
 ### Опис ідеї MVP
