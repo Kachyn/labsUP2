@@ -12,7 +12,7 @@ export function useMotorControl() {
 
     if (direction === 'forward') {
       leftMotorSpeed.value = baseSpeed;
-      rightMotorSpeed.value = Math.round(baseSpeed * RIGHT_MOTOR_COEFFICIENT);
+      rightMotorSpeed.value = baseSpeed;
     } else if (direction === 'stop') {
       leftMotorSpeed.value = 0;
       rightMotorSpeed.value = 0;
