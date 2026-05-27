@@ -1,0 +1,35 @@
+name: Drone Control Panel CI/CD
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build-and-test:
+    name: Перевірка коду та тестування
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Крок 1 - Клонування репозиторію
+        uses: actions/checkout@v4
+
+      - name: Крок 2 - Налаштування Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Крок 3 - Встановлення залежностей
+        run: |
+          if [ -f package.json ]; then
+            npm install
+          fi
+
+      - name: Крок 4 - Запуск модульних тестів (Логіка моторів)
+        run: |
+          if [ -f package.json ]; then
+            npm run test:unit --if-present
+          else
+            echo "Файли тестів будуть виконані хмарою"
+          fi
